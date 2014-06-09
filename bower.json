@@ -1,0 +1,19 @@
+{
+  "name": "basic-web-components",
+  "version": "0.0.1",
+  "dependencies": {
+    "basic-autosize-textarea": "basic-web-components/basic-autosize-textarea#master",
+    "basic-element": "basic-web-components/basic-element#master",
+    "basic-filter-by-text": "basic-web-components/basic-filter-by-text#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-modes": "basic-web-components/basic-modes#master",
+    "basic-seamless-iframe": "basic-web-components/basic-seamless-iframe#master",
+    "basic-sequence": "basic-web-components/basic-sequence#master",
+    "basic-slideshow": "basic-web-components/basic-slideshow#master",
+    "basic-text-extractor": "basic-web-components/basic-text-extractor#master",
+    "polymer": "Polymer/polymer#master"
+  },
+  "ignore": [
+    "components"
+  ]
+}
