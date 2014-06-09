@@ -9,6 +9,7 @@
     "basic-modes": "basic-web-components/basic-modes#master",
     "basic-seamless-iframe": "basic-web-components/basic-seamless-iframe#master",
     "basic-sequence": "basic-web-components/basic-sequence#master",
+    "basic-sequence-navigator": "basic-web-components/basic-sequence-navigator#master",
     "basic-slideshow": "basic-web-components/basic-slideshow#master",
     "basic-text-extractor": "basic-web-components/basic-text-extractor#master",
     "polymer": "Polymer/polymer#master"

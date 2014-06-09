@@ -1,0 +1,26 @@
+{
+  "name": "basic-filter-by-text",
+  "description": "Filters its children to only show those with content text matching a given target string",
+  "license": "MIT",
+  "main": "basic-filter-by-text.html",
+  "dependencies": {
+    "basic-element": "basic-web-components/basic-element#master"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/basic-web-components/basic-filter-by-text",
+  "_release": "e4cba9e112",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e4cba9e1128e9042d28f61ceb25b3c5899593275"
+  },
+  "_source": "git://github.com/basic-web-components/basic-filter-by-text.git",
+  "_target": "master",
+  "_originalSource": "basic-web-components/basic-filter-by-text"
+}

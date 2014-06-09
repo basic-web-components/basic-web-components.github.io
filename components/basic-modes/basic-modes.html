@@ -1,0 +1,118 @@
+<!--
+Shows a single child element at a time.
+
+This simple class handles a very common user interface pattern in the contents
+shown in part (or all) of the page/screen depends on a mode or state. The state
+could:
+
+* Be directly driven by user activity (the user selects an item somewhere
+else that sets the mode)
+* Be implicitly driven by user activity (e.g., the user asked to start a process,
+and the process goes through a sequence of states)
+* Reflect the state of the account/device/network/etc (e.g., an offline mode vs.
+an online mode).
+
+Here the modes are represented by child elements, only one of which will be
+shown at a time. By default, the first child (mode) is shown.
+
+The basic-modes class is useful as a base class for other forms of navigation
+between modes/states. This element provides no user interface of its own for
+switching modes. For some common user interface patterns, consider other
+elements which use basic-modes, such as basic-sequence-navigator or basic-
+slideshow. The subclass basic-sequence derives from basic-elements, adding
+transitional effects.
+
+The basic-modes element can handle redistributed content. That is, if you place
+a <content> element inside a <basic-element>, the latter will consider the
+elements distributed to the <content> (rather than the <content> element itself)
+as the set of modes.
+
+@element basic-modes
+-->
+<!--
+TODO: Contain a polymer-selector rather than inherit from it? This would help
+avoid cases like multi-selection being turned on.
+-->
+
+<link rel="import" href="../core-selector/core-selector.html">
+
+<polymer-element name="basic-modes" extends="core-selector">
+<template>
+  <style>
+  :host {
+    display: block;
+    overflow: hidden;
+    position: relative;
+  }
+
+  polyfill-next-selector {
+    content: ':not(.core-selected)';
+  }
+  ::content :not(.core-selected) {
+    display: none;
+  }
+  </style>
+  <shadow></shadow>
+</template>
+
+<script>
+Polymer( "basic-modes", {
+
+  attached: function() {
+    // By default, the first mode is selected.
+    if ( !this.selected ) {
+      this.selected = 0;
+    }
+  },
+
+  /*
+   * Returns the collection of children, where any children that are content
+   * nodes are replaced with the elements distributed (perhaps more than once)
+   * to that content element.
+   *
+   * TODO: Move this to basic-element?
+   * TODO: This walks the whole content tree every time the list is requested.
+   * It'd be nice to cache the answer and invalidate it only when content
+   * actually changes.
+   */
+  get distributedChildren() {
+    return this._flattenChildren( this.children );
+  },
+
+  // Override the basic items property so we can handle (re)distributed content.
+  // TODO: Handle selectors, etc., like base class' items can.
+  get items() {
+    return this.distributedChildren;
+  },
+
+  ready: function() {
+    this.super();
+    this.notap = true; /* Disable core-selector's click-to-select feature */
+  },
+
+  /*
+   * Given a node, return the children of that element. If any of the children
+   * are content elements, instead of returning the content element, return the
+   * nodes distributed to it. (Apply this rule recursively.)
+   */
+  _flattenChildren: function( nodes ) {
+    var expanded = Array.prototype.map.call( nodes, function( node ) {
+      if ( node instanceof HTMLContentElement ) {
+        // content element; use its distributed nodes instead.
+        return this._flattenChildren( node.getDistributedNodes() );
+      } else if ( node instanceof HTMLElement ) {
+        // Plain element; use as is.
+        return [ node ];
+      } else {
+        // Not an element; skip.
+        return [];
+      }
+    }.bind( this ));
+    var flattened = Array.prototype.concat.apply( [], expanded );
+    return flattened;
+  }
+
+});
+</script>
+
+</polymer-element>

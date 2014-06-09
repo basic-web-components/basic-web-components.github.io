@@ -1,0 +1,29 @@
+{
+  "name": "basic-slideshow",
+  "description": "Cycles through a set of child elements (e.g., images)",
+  "license": "MIT",
+  "main": "basic-slideshow.html",
+  "dependencies": {
+    "basic-sequence": "basic-web-components/basic-sequence#master"
+  },
+  "dev-dependencies": {
+    "basic-framed-content": "basic-web-components/basic-framed-content#master"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/basic-web-components/basic-slideshow",
+  "_release": "58b3334a47",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "58b3334a47e97ba08fee5c1c4a895298ad0b8f6a"
+  },
+  "_source": "git://github.com/basic-web-components/basic-slideshow.git",
+  "_target": "master",
+  "_originalSource": "basic-web-components/basic-slideshow"
+}

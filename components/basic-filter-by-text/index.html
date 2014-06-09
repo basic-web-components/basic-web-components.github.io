@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>basic-filter-by-text</title>
+<script src="../platform/platform.js"></script>
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="basic-filter-by-text.html">
+
+<style>
+body,
+button,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+body {
+  margin: 0.5in;
+}
+</style>
+
+<link rel="import" href="../basic-element/basic-element.html">
+<polymer-element name="filter-demo" attributes="filter" extends="basic-element">
+<template>
+  <input placeholder="Search" type="text" value="{{filter}}">
+  <basic-filter-by-text filter="{{filter}}" class="hideMisses">
+    <content></content>
+  </basic-filter-by-text>
+</template>
+<script>
+Polymer( "filter-demo" );
+</script>
+</polymer-element>
+
+</head>
+
+<body>
+  <filter-demo>
+    <div>Loaf of bread</div>
+    <div>Container of <i>milk</i></div>
+    <div>Stick of butter</div>
+  </filter-demo>
+</body>
+
+</html>

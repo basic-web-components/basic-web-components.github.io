@@ -1,0 +1,26 @@
+{
+  "name": "basic-text-extractor",
+  "description": "Flattens the text of its own content and exposes it an bindable attribute",
+  "license": "MIT",
+  "main": "basic-text-extractor.html",
+  "dependencies": {
+    "basic-element": "basic-web-components/basic-element#master"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/basic-web-components/basic-text-extractor",
+  "_release": "e23260a91c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e23260a91cf43139c72c03f21bba5d56b0c20af0"
+  },
+  "_source": "git://github.com/basic-web-components/basic-text-extractor.git",
+  "_target": "master",
+  "_originalSource": "basic-web-components/basic-text-extractor"
+}
