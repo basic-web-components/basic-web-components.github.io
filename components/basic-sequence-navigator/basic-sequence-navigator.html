@@ -13,7 +13,7 @@ emphasize this fact, the entire element shows a focus rectangle, rather than
 showing focus on the individual buttons within the element.
 
 @element basic-sequence-navigator
-@demo http://basic-web-components.github.io/components/basic-sequence-navigator
+@demo http://basic-web-components.github.io/components/basic-sequence-navigator/
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -25,13 +25,16 @@ showing focus on the individual buttons within the element.
 <template>
   <style>
   :host {
-    display: inline-block;
+    /*
+     * We'd like to apply -webkit-flex here, but it doesn't work; see notes
+     * in attached() handler.
+     */
+    display: none; /* Will get overwritten with next line or by attached(). */
+    display: flex;
    }
 
   #sequenceNavigationContainer {
-    -webkit-align-items: stretch; /* Safari */
-    align-items: stretch;
-    display: -webkit-flex; /* Safari */
+    display: none;  /* Safari. See notes at attached(). */
     display: flex;
   }
   #sequenceNavigationContainer:focus {
@@ -39,34 +42,36 @@ showing focus on the individual buttons within the element.
     outline: auto 5px -webkit-focus-ring-color; /* Chrome/Webkit */
   }
 
+  #sequence {
+    -webkit-flex: 1;*/
+    flex: 1; /* Not to stretch it, but to ensure in shrinks in tight widths. */
+  }
+
   .navigationButton {
-    background: white;
+    background: transparent;
     border: 1px solid transparent;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
   .navigationButton:hover:not(:disabled) {
-    background: #eee;
-    fill: #333;
+    background: rgba( 0, 0, 0, 0.1 );
+    fill: rgba( 0, 0, 0, 0.7 );
   }
   .navigationButton:active:not(:disabled) {
-    background: #ddd;
-    fill: black;
+    background: rgba( 0, 0, 0, 0.2 );
+    fill: rgba( 0, 0, 0, 0.9 );
   }
   .navigationButton:disabled {
-    fill: #ccc;
-  }
-
-  #sequence {
-    -webkit-flex: 1;
-    flex: 1;
+    fill: rgba( 0, 0, 0, 0.2 );
   }
   </style>
 
   <div id="sequenceNavigationContainer" tabindex="0">
 
-    <button id="buttonPrevious" class="navigationButton" on-tap="{{previous}}" disabled?="{{!canGoPrevious}}" tabindex="-1" aria-label="Previous" aria-controls="sequence">
+    <!-- We'd like to use on-tap with these buttons, but as of 6/11/14, that's
+    no working in IE 11. -->
+    <button id="buttonPrevious" class="navigationButton" on-click="{{previous}}" disabled?="{{!canGoPrevious}}" tabindex="-1" aria-label="Previous" aria-controls="sequence">
       <core-icon icon="chevron-left" size="36"></core-icon>
     </button>
 
@@ -81,7 +86,7 @@ showing focus on the individual buttons within the element.
       <content></content>
     </basic-sequence>
 
-    <button id="buttonNext" class="navigationButton" on-tap="{{next}}" disabled?="{{!canGoNext}}" tabindex="-1" aria-label="Next" aria-controls="sequence">
+    <button id="buttonNext" class="navigationButton" on-click="{{next}}" disabled?="{{!canGoNext}}" tabindex="-1" aria-label="Next" aria-controls="sequence">
       <core-icon icon="chevron-right" size="36"></core-icon>
     </button>
 
@@ -90,6 +95,26 @@ showing focus on the individual buttons within the element.
 
 <script>
 Polymer( "basic-sequence-navigator", {
+
+  attached: function() {
+    /*
+     * HACK for Safari WebKit. Setting -webkit-flex on host element in CSS
+     * doesn't seem to get rendered properly. If we apply it after the element
+     * renders, WebKit seems to get the hint and actually apply the flex box
+     * styling. This produces some annoying flash, but is better than the
+     * element not rendering at all. Use a timeout to give things time to render.
+     */
+    if ( getComputedStyle( this ).display === "none" ) {
+      setTimeout( function() {
+        /* Browser didn't pick up "flex" -> we're on WebKit. */
+        this.style.display = "-webkit-flex";
+        /* Seems we also need to give above change time to render. Ugh. */
+        setTimeout( function() {
+          this.$.sequenceNavigationContainer.style.display = "-webkit-flex";
+        }.bind( this ), 1);
+      }.bind( this ), 1);
+    }
+  },
 
   effect: "slide",
 

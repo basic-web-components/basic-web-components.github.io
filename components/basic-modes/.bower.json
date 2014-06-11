@@ -17,11 +17,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-modes",
-  "_release": "ff5c427641",
+  "_release": "1ad6486d98",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ff5c427641d120ce47900e981ef7b42cafc29840"
+    "commit": "1ad6486d986f06b49a7586e3731eef40d8802186"
   },
   "_source": "git://github.com/basic-web-components/basic-modes.git",
   "_target": "master",
