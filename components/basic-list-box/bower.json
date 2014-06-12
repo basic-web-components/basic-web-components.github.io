@@ -1,11 +1,11 @@
 {
   "name": "basic-list-box",
-  "description": "A list box that allows single selection",
+  "description": "A single-selection list box with highlighting and keyboard navigation",
   "version": "0.0.1",
   "license": "MIT",
   "main": "basic-list-box.html",
   "dependencies": {
-    "polymer-selector": "Polymer/polymer-selector#master"
+    "core-selector": "Polymer/core-selector#master"
   },
   "dev-dependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master"
