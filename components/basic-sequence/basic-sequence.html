@@ -107,7 +107,7 @@ Polymer( "basic-sequence", {
   // See http://stackoverflow.com/questions/23900203/easiest-way-for-a-polymer-element-to-declare-a-bindable-property-with-a-getter-s.
   canGoNext: false,
   get _canGoNext() {
-    return ( this.wrapAround || this.selectedIndex + 1 < this.distributedChildren.length );
+    return ( this.wrapAround || this.selectedIndex + 1 < this.flattenChildren.length );
   },
 
   /**

@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "basic-list-box.html",
   "dependencies": {
-    "core-selector": "Polymer/core-selector#master"
+    "basic-selector": "basic-web-components/basic-selector#master"
   },
   "dev-dependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master"
@@ -17,11 +17,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-list-box",
-  "_release": "9c3ff91c09",
+  "_release": "69eea94685",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "9c3ff91c09f86ebc60299a87df20abccca39d864"
+    "commit": "69eea9468507664a828b73ff6bfd7e9f913f98c4"
   },
   "_source": "git://github.com/basic-web-components/basic-list-box.git",
   "_target": "master",

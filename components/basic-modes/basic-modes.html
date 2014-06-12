@@ -22,10 +22,10 @@ elements which use basic-modes, such as basic-sequence-navigator or basic-
 slideshow. The subclass basic-sequence derives from basic-elements, adding
 transitional effects.
 
-The basic-modes element can handle redistributed content. That is, if you place
-a <content> element inside a <basic-element>, the latter will consider the
-elements distributed to the <content> (rather than the <content> element itself)
-as the set of modes.
+Like other Basic Web Components, basic-modes element can handle distributed
+content. That is, if you place a content element inside a basic-modes, the
+latter will consider the elements distributed to the content element (rather
+than the content element itself) as the set of modes.
 
 @element basic-modes
 @demo http://basic-web-components.github.io/components/basic-modes/
@@ -35,9 +35,9 @@ TODO: Contain a core-selector rather than inherit from it? This would help
 avoid cases like multi-selection being turned on.
 -->
 
-<link rel="import" href="../core-selector/core-selector.html">
+<link rel="import" href="../basic-selector/basic-selector.html">
 
-<polymer-element name="basic-modes" extends="core-selector">
+<polymer-element name="basic-modes" extends="basic-selector">
 <template>
   <style>
   :host {
@@ -66,51 +66,9 @@ Polymer( "basic-modes", {
     }
   },
 
-  /*
-   * Returns the collection of children, where any children that are content
-   * nodes are replaced with the elements distributed (perhaps more than once)
-   * to that content element.
-   *
-   * TODO: Move this to basic-element?
-   * TODO: This walks the whole content tree every time the list is requested.
-   * It'd be nice to cache the answer and invalidate it only when content
-   * actually changes.
-   */
-  get distributedChildren() {
-    return this._flattenChildren( this.children );
-  },
-
-  // Override the basic items property so we can handle (re)distributed content.
-  // TODO: Handle selectors, etc., like base class' items can.
-  get items() {
-    return this.distributedChildren;
-  },
-
   ready: function() {
     this.super();
     this.notap = true; /* Disable core-selector's click-to-select feature */
-  },
-
-  /*
-   * Given a node, return the children of that element. If any of the children
-   * are content elements, instead of returning the content element, return the
-   * nodes distributed to it. (Apply this rule recursively.)
-   */
-  _flattenChildren: function( nodes ) {
-    var expanded = Array.prototype.map.call( nodes, function( node ) {
-      if ( node instanceof HTMLContentElement ) {
-        // content element; use its distributed nodes instead.
-        return this._flattenChildren( node.getDistributedNodes() );
-      } else if ( node instanceof HTMLElement ) {
-        // Plain element; use as is.
-        return [ node ];
-      } else {
-        // Not an element; skip.
-        return [];
-      }
-    }.bind( this ));
-    var flattened = Array.prototype.concat.apply( [], expanded );
-    return flattened;
   }
 
 });
