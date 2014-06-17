@@ -17,11 +17,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-autosize-textarea",
-  "_release": "320d1696a7",
+  "_release": "67984fb349",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "320d1696a7b31b228ad247565b2ab679fc668168"
+    "commit": "67984fb3490ff603c79dcaa53872de5d40a0e7cf"
   },
   "_source": "git://github.com/basic-web-components/basic-autosize-textarea.git",
   "_target": "master",
