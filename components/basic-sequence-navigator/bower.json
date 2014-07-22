@@ -9,7 +9,7 @@
     "core-icons": "Polymer/core-icons#master",
     "polymer": "Polymer/polymer#master"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master"
   },
   "keywords": [

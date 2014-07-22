@@ -6,7 +6,7 @@
   "dependencies": {
     "basic-selector": "basic-web-components/basic-selector#master"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master"
   },
   "keywords": [
@@ -17,11 +17,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-list-box",
-  "_release": "69eea94685",
+  "_release": "0fd299d1c7",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "69eea9468507664a828b73ff6bfd7e9f913f98c4"
+    "commit": "0fd299d1c7b43107e598c0f39a1ecbec57c34ad5"
   },
   "_source": "git://github.com/basic-web-components/basic-list-box.git",
   "_target": "master",

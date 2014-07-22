@@ -6,11 +6,11 @@
     "core-component-page": "Polymer/core-component-page#master"
   },
   "homepage": "https://github.com/Polymer/polymer",
-  "_release": "4e426f99fc",
+  "_release": "5199f21c33",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "4e426f99fc85ce779a49c708697e5093093be161"
+    "commit": "5199f21c336701491b5cd752b6da1b009ad4caf7"
   },
   "_source": "git://github.com/Polymer/polymer.git",
   "_target": "master",

@@ -8,7 +8,7 @@
     "basic-element": "basic-web-components/basic-element#master",
     "core-selector": "Polymer/core-selector#master"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master"
   },
   "keywords": [

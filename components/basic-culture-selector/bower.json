@@ -1,0 +1,21 @@
+{
+  "name": "<COMPONENT>",
+  "description": "<DESCRIPTION>",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "<COMPONENT>.html",
+  "dependencies": {
+    "basic-element": "basic-web-components/basic-element#master",
+    "globalize": "*"
+  },
+  "devDependencies": {
+    "basic-framed-content": "basic-web-components/basic-framed-content#master"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ]
+}
