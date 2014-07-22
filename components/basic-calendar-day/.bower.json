@@ -18,11 +18,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-calendar-day",
-  "_release": "a58c1b8421",
+  "_release": "53400ac327",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "a58c1b842159b6a3e8abe973d04b10077e5c7fdb"
+    "commit": "53400ac327e95b92d578e31248440eb761ef4a71"
   },
   "_source": "git://github.com/basic-web-components/basic-calendar-day.git",
   "_target": "master",
