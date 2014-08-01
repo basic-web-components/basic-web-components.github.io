@@ -1,7 +1,17 @@
-<!--
 Select a culture from the Globalize culture list.
+<!--
 
-This can be used as an invisible helper component, or as a UI component.
+This currently works with Globalize 0.x. This component will be updated to work
+with Globalize 1.x-alpha, which is substantially different, when that edition
+leaves alpha status.
+
+This can be used as a UI component, or an invisible component to load
+language/culture settings. In that scenario, set the "name" attribute to the
+desired language/culture, wait for the "basic-culture-changed" event to fire,
+then read the "culture" attribute to get its settings.
+
+@element basic-culture-selector
+@demo http://basic-web-components.github.io/components/basic-culture-selector/
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -386,8 +396,27 @@ GlobalizeCulture = {
 
 Polymer( "basic-culture-selector", {
 
+  /**
+   * Fired when the culture attribute has been changed.
+   *
+   * @event basic-culture-changed
+   * @param Object detail Event details; the "culture" property contains a
+   *                      reference to the new Globalize culture.
+   */
+
+  /**
+   * The Globalize culture/language settings loaded by this element.
+   *
+   * @attribute culture
+   */
+  culture: null,
+
   cultureChanged: function() {
-    this.dispatchEvent( new CustomEvent( "globalize-culture-changed" ) );
+    this.dispatchEvent( new CustomEvent( "basic-culture-changed", {
+      detail: {
+        culture: this.culture
+      }
+    }));
   },
 
   ready: function() {
@@ -395,13 +424,25 @@ Polymer( "basic-culture-selector", {
     this.nameChanged();
   },
 
-  name: Globalize.cultures.default.name,
-
   nameChanged: function() {
     var cultureIdentifier = this.name;
     this._loadCulture( cultureIdentifier, function() {
       this.culture = Globalize.cultures[ cultureIdentifier ];
     }.bind( this ));
+  },
+
+  publish: {
+    /**
+     * The name of the Globalize culture/language assigned to this element.
+     *
+     * @attribute name
+     * @type string
+     * @default "en-US"
+     */    
+    name: {
+      value: Globalize.cultures.default.name,
+      reflect: true
+    }
   },
 
   // Ensure the culture info for the given culture is loaded.

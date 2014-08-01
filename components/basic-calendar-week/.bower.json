@@ -17,11 +17,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-calendar-week",
-  "_release": "c445ea2edb",
+  "_release": "6a558412e1",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c445ea2edbb0aaff6fcc3aa2da9df4cfa45e35e3"
+    "commit": "6a558412e1fe343b9ab2e78a4ee642e021462733"
   },
   "_source": "git://github.com/basic-web-components/basic-calendar-week.git",
   "_target": "master",

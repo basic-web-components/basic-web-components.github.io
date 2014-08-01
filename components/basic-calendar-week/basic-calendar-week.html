@@ -3,6 +3,19 @@ Shows a single calendar week.
 
 To the degree possible, all language/culture-specific aspects of this component
 are localizable with the Globalize library (https://github.com/jquery/globalize).
+(This currently works with Globalize 0.x. This component will be updated to work
+with Globalize 1.x-alpha, which is substantially different, when that edition
+leaves alpha status.)
+
+Currently, this puts the first day of the week on the left, and the last day of
+the week on the right. There appear to be examples of calendars in Arabic (a
+right-to-left language) that show the opposite, with the first day of the week
+on the right, and the day numbers increasing to the right. However, there appear
+to be plenty of examples of Arabic calendars that show the first day of the week
+on the left. So even for a right-to-left language like Arabic, it appears that
+having the time axis ordered left-to-right may be acceptable. The Globalize
+library doesn’t seem to include information on the preferred direction of time,
+so for now this component assumes that left-to-right works for most users.
 
 @element basic-calendar-week
 @demo http://basic-web-components.github.io/components/basic-calendar-week/

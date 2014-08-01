@@ -18,11 +18,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-month-and-year",
-  "_release": "5b2a0407fb",
+  "_release": "9e10deef1a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "5b2a0407fbc18b4073c64a33060d65c4ffae509f"
+    "commit": "9e10deef1a1e87114c815cb5164d29124d4b455d"
   },
   "_source": "git://github.com/basic-web-components/basic-month-and-year.git",
   "_target": "master",
