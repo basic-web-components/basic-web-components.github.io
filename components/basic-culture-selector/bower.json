@@ -1,9 +1,9 @@
 {
-  "name": "<COMPONENT>",
-  "description": "<DESCRIPTION>",
+  "name": "basic-culture-selector",
+  "description": "Select a culture from the Globalize culture list",
   "version": "0.0.1",
   "license": "MIT",
-  "main": "<COMPONENT>.html",
+  "main": "basic-culture-selector.html",
   "dependencies": {
     "basic-element": "basic-web-components/basic-element#master",
     "globalize": "0.x"

@@ -14,11 +14,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-filter-by-text",
-  "_release": "d6d9b271aa",
+  "_release": "647c496a8c",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d6d9b271aa41e47354488c660202fc6b1d8e0edb"
+    "commit": "647c496a8cd591b4b42d7140ee65fe249c361222"
   },
   "_source": "git://github.com/basic-web-components/basic-filter-by-text.git",
   "_target": "master",

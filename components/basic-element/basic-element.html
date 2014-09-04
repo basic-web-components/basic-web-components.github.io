@@ -33,7 +33,7 @@ Right now, this includes:
  *
  * These can be included in any element with the use of Platform.mixin():
  *
- * Polymer( "my-component", Platform.mixin( BasicWebComponents, {
+ * Polymer( Platform.mixin( BasicWebComponents, {
  *   // Your own properties/methods go here.
  * }));
  *
@@ -122,7 +122,7 @@ window.BasicWebComponents = {
 /*
  * Basic element base class.
  */
-Polymer( "basic-element", Platform.mixin( {
+Polymer( Platform.mixin({
 
   attached: function() {
     // If the element has a contentChanged handler, then wire up an observer for

@@ -19,11 +19,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-calendar-month-days",
-  "_release": "49ec1dd251",
+  "_release": "2a7c27f90b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "49ec1dd251397e67a55cc4e687ac43904fb7845b"
+    "commit": "2a7c27f90bdf1f86664792de47c07f287ebb40eb"
   },
   "_source": "git://github.com/basic-web-components/basic-calendar-month-days.git",
   "_target": "master",

@@ -12,7 +12,7 @@ distributed nodes rather than the content element itself.
 
 <polymer-element name="basic-selector" extends="core-selector">
 <script>
-Polymer( "basic-selector", Platform.mixin( BasicWebComponents, {
+Polymer( Platform.mixin( BasicWebComponents, {
 
   // Override the basic items property so we can handle (re)distributed content.
   // TODO: Handle selectors, etc., like base class' items can.

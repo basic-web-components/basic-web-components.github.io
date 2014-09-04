@@ -18,11 +18,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-selector",
-  "_release": "1ebcc8aef1",
+  "_release": "65f598d423",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "1ebcc8aef14efa577bdad856d2c5147679cc8aee"
+    "commit": "65f598d4231867354a0cdaa85e2ca6d5ce9652cd"
   },
   "_source": "git://github.com/basic-web-components/basic-selector.git",
   "_target": "master",
