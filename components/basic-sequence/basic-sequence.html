@@ -9,6 +9,11 @@ add the notion of moving to the next or previous item in a sequence.
 A small set of standard transition effects is included. You can define your own
 effects through CSS, especially CSS transitions.
 
+To align elements within individual children, apply the styling (centering,
+etc.) to the children and/or their contents, rather than to the basic-sequence
+element. This avoids interfering with the basic-sequence element's management of
+the position of children during transition effects.
+
 This component does not include UI controls or keyboard support for moving
 between items; you must supply such controls yourself. For a common pattern that
 lets a user navigate with next/previous buttons and arrow keys, see basic-
@@ -33,9 +38,9 @@ sequence-navigator.
   }
 
   polyfill-next-selector {
-    content: ':not(.core-selected)';
+    content: '#effectContainer > :not(.core-selected)';
   }
-  ::content :not(.core-selected) {
+  ::content > :not(.core-selected) {
     display: block;
     left: 0;
     position: absolute;
@@ -55,23 +60,13 @@ sequence-navigator.
   #effectContainer {
     display: block;
     overflow: hidden;
-  }
-
-  /*
-   * HACK: For some reason, our :not(.core-selected) content styling defined
-   * above gets applied to the two special containers — even those things are
-   * in shadow, not in content. Until we can figure out why, force those the
-   * containers to be visible.
-   */
-  .specialContainer {
-    position: relative !important;
-    visibility: visible !important;
+    width: 100%;
   }
 
   polyfill-next-selector {
     content: '#effectContainer > .sequenceTransition';
   }
-  ::content .sequenceTransition {
+  ::content > .sequenceTransition {
     visibility: visible;
   }
 

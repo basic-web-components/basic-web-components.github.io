@@ -46,10 +46,11 @@ avoid cases like multi-selection being turned on.
     position: relative;
   }
 
+  /* Polymer can't polyfill ::content > * correctly, so we do it by hand. */
   polyfill-next-selector {
-    content: ':not(.core-selected)';
+    content: ':host > :not(.core-selected)';
   }
-  ::content :not(.core-selected) {
+  ::content > :not(.core-selected) {
     display: none;
   }
   </style>
