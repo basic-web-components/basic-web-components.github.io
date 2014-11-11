@@ -17,7 +17,7 @@ the position of children during transition effects.
 This component does not include UI controls or keyboard support for moving
 between items; you must supply such controls yourself. For a common pattern that
 lets a user navigate with next/previous buttons and arrow keys, see basic-
-sequence-navigator.
+carousel.
 
 @element basic-sequence
 @demo http://basic-web-components.github.io/components/basic-sequence/
@@ -147,6 +147,7 @@ Polymer({
   },
 
   ready: function() {
+    this.super();
     this.addEventListener( "transitionend", function( event ) {
       this._transitionComplete( event.target );
     }.bind( this ));

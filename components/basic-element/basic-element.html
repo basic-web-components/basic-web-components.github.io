@@ -87,6 +87,23 @@ window.BasicWebComponents = {
   },
 
   /*
+   * Do the standard work a basic element wants in its attached handler.
+   */
+  _basicAttached: function() {
+    // If the element has a contentChanged handler, then wire up an observer for
+    // content change events.
+    if ( this.contentChanged ) {
+      this._observeContentChanged( this, function() {
+        this._observeContentChangedHandler();
+      }.bind( this ));
+      if ( this.childNodes.length > 0 ) {
+        // Consider any initial content of a new element to be "changed" content.
+        this._observeContentChangedHandler();
+      }
+    }    
+  },
+
+  /*
    * Given a node, return the children of that element. If any of the children
    * are content elements, instead of returning the content element, return the
    * nodes distributed to it. (Apply this rule recursively.)
@@ -113,57 +130,6 @@ window.BasicWebComponents = {
     }.bind( this ));
     var flattened = Array.prototype.concat.apply( [], expanded );
     return flattened;
-  }
-
-};
-
-
-
-/*
- * Basic element base class.
- */
-Polymer( Platform.mixin({
-
-  attached: function() {
-    // If the element has a contentChanged handler, then wire up an observer for
-    // content change events.
-    if ( this.contentChanged ) {
-      this._observeContentChanged( this, function() {
-        this._observeContentChangedHandler();
-      }.bind( this ));
-      if ( this.childNodes.length > 0 ) {
-        // Consider any initial content of a new element to be "changed" content.
-        this._observeContentChangedHandler();
-      }
-    }
-  },
-
-  ready: function() {
-    this.super();
-    this.setup();
-  },
-
-  publish: {
-    generic: {
-      value: null,
-      reflect: true
-    }
-  },
-
-  setup: function() {
-    // We explicitly set the generic attribute to true, rather than providing
-    // that as a default value. A default value won't appear on an element
-    // instance as an attribute, but an attribute we set explicitly will. We
-    // need the attribute there so that generic styling can be set simply by
-    // defining rules like
-    //
-    //   :host([generic=""]) {
-    //     ...
-    //   }
-    //
-    if ( this.getAttribute( "generic" ) == null ) {
-      this.generic = true;
-    }
   },
 
   // Wire up an observer for (light DOM) content change events on the given
@@ -197,6 +163,47 @@ Polymer( Platform.mixin({
       this._observeContentChanged( host, function() {
         this.contentChanged();
       }.bind( this ));
+    }
+  }
+
+};
+
+
+
+/*
+ * Basic element base class.
+ */
+Polymer( Platform.mixin({
+
+  attached: function() {
+    this._basicAttached();
+  },
+
+  ready: function() {
+    this.super();
+    this.setup();
+  },
+
+  publish: {
+    generic: {
+      value: null,
+      reflect: true
+    }
+  },
+
+  setup: function() {
+    // We explicitly set the generic attribute to true, rather than providing
+    // that as a default value. A default value won't appear on an element
+    // instance as an attribute, but an attribute we set explicitly will. We
+    // need the attribute there so that generic styling can be set simply by
+    // defining rules like
+    //
+    //   :host([generic=""]) {
+    //     ...
+    //   }
+    //
+    if ( this.getAttribute( "generic" ) == null ) {
+      this.generic = true;
     }
   }
 
