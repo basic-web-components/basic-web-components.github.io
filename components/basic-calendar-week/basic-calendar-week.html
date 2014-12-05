@@ -24,7 +24,7 @@ so for now this component assumes that left-to-right works for most users.
 <link rel="import" href="../basic-element/basic-element.html">
 <link rel="import" href="../basic-calendar-day/basic-calendar-day.html">
 
-<polymer-element name="basic-calendar-week" extends="basic-element" attributes="culture date dayTag">
+<polymer-element name="basic-calendar-week" extends="basic-element" attributes="culture date dayElement">
 
 <template>
 
@@ -94,6 +94,28 @@ Polymer({
   },
 
   /**
+   * The name for the element type which should be used to render the individual
+   * days in the week.
+   *
+   * @attribute dayElement
+   * @default "basic-calendar-day"
+   */
+  dayElement: "basic-calendar-day",
+
+  dayElementChanged: function() {
+    var dayTemplate = document.createElement( this.dayElement );
+    var shadowRoot = this.shadowRoot;
+    this.days.forEach( function( day, i ) {
+      var newDay = dayTemplate.cloneNode();
+      newDay.classList.add( "day" );
+      newDay.classList.toggle( "firstDayOfWeek", i === 0 );
+      newDay.classList.toggle( "lastDayOfWeek", i === 6 );
+      shadowRoot.replaceChild( newDay, day );
+    }.bind( this ));
+    this._refresh();
+  },
+
+  /**
    * Returns the day element corresponding to the given date.
    *
    * @method dayElementForDate
@@ -108,28 +130,6 @@ Polymer({
       // Date falls outside week.
       return null;
     }
-  },
-
-  /**
-   * The name for the element type which should be used to render the individual
-   * days in the week.
-   *
-   * @attribute dayTag
-   * @default "basic-calendar-day"
-   */
-  dayTag: "basic-calendar-day",
-
-  dayTagChanged: function() {
-    var dayTemplate = document.createElement( this.dayTag );
-    var shadowRoot = this.shadowRoot;
-    this.days.forEach( function( day, i ) {
-      var newDay = dayTemplate.cloneNode();
-      newDay.classList.add( "day" );
-      newDay.classList.toggle( "firstDayOfWeek", i === 0 );
-      newDay.classList.toggle( "lastDayOfWeek", i === 6 );
-      shadowRoot.replaceChild( newDay, day );
-    }.bind( this ));
-    this._refresh();
   },
 
   /**

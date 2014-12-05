@@ -18,11 +18,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-culture-selector",
-  "_release": "62496dae5d",
+  "_release": "d75673d38d",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "62496dae5da41393ba42ee8d154702ef67824875"
+    "commit": "d75673d38d834086d753a925c29d583a55ddd016"
   },
   "_source": "git://github.com/basic-web-components/basic-culture-selector.git",
   "_target": "master",

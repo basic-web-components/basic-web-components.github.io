@@ -28,15 +28,24 @@ Polymer( Platform.mixin( BasicWebComponents, {
 
   contentChanged: function() {
     // If our contents change, then our items property implicitly changes too.
-    Object.getNotifier( this ).notify({
-      type: "update",
-      name: "items"
-    });
+    if ( Object.getNotifier ) {
+      Object.getNotifier( this ).notify({
+        type: "update",
+        name: "items"
+      });
+    }
   },
 
   excludedLocalNames: "template",
 
-  // Override the basic items property so we can handle (re)distributed content.
+  /**
+   * Returns an array of the items that can be selected.
+   *
+   * This override's the items property of core-selector so that it can handle
+   * redistributed content.
+   *
+   * @property items
+   */
   // TODO: Handle selectors, etc., like base class' items can.
   get items() {
     var flattened = this.flattenChildren;

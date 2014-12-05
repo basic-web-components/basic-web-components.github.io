@@ -17,11 +17,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-sequence",
-  "_release": "d61f212a8a",
+  "_release": "50151ae1b9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d61f212a8ad9fb0ecd11cf0da8ca56cdc7493bef"
+    "commit": "50151ae1b9e688bc7e8d39e557f82f4713f6ab25"
   },
   "_source": "git://github.com/basic-web-components/basic-sequence.git",
   "_target": "master",
