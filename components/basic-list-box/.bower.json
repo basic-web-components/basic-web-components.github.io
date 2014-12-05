@@ -17,11 +17,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-list-box",
-  "_release": "dea929c6f3",
+  "_release": "a36898e1ff",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "dea929c6f3a4385b865dccd2d084b3a7cc5801ac"
+    "commit": "a36898e1ff2a146fa29f81ea10e4ef5552982acf"
   },
   "_source": "git://github.com/basic-web-components/basic-list-box.git",
   "_target": "master",

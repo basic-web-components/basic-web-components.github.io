@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "dependencies": {
     "basic-autosize-textarea": "basic-web-components/basic-autosize-textarea#master",
-    "basic-button": "basic-web-components/basic-button#master",
     "basic-calendar-month": "basic-web-components/basic-calendar-month#master",
     "basic-calendar-day": "basic-web-components/basic-calendar-day#master",
     "basic-calendar-month-days": "basic-web-components/basic-calendar-month-days#master",
