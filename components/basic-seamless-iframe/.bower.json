@@ -14,11 +14,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-seamless-iframe",
-  "_release": "13681b5ee8",
+  "_release": "a5f3e47371",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "13681b5ee8c70ef346895a3de49cd85e3336a82c"
+    "commit": "a5f3e47371a78f8cc43681b020eca163998e2bb4"
   },
   "_source": "git://github.com/basic-web-components/basic-seamless-iframe.git",
   "_target": "master",
