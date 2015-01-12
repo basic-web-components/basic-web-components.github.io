@@ -4,6 +4,7 @@
   "license": "MIT",
   "main": "basic-calendar-week.html",
   "dependencies": {
+    "basic-calendar-day": "basic-web-components/basic-calendar-day#master",
     "basic-element": "basic-web-components/basic-element#master"
   },
   "devDependencies": {
@@ -17,11 +18,11 @@
     "**/.*"
   ],
   "homepage": "https://github.com/basic-web-components/basic-calendar-week",
-  "_release": "a31f516487",
+  "_release": "ca72ce5fda",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "a31f516487325de41d63ce642e161c31591ffc21"
+    "commit": "ca72ce5fdaac358e7bbfe6b0f5f6bae9eef25211"
   },
   "_source": "git://github.com/basic-web-components/basic-calendar-week.git",
   "_target": "master",

@@ -5,6 +5,7 @@
   "license": "MIT",
   "main": "basic-calendar-week.html",
   "dependencies": {
+    "basic-calendar-day": "basic-web-components/basic-calendar-day#master",
     "basic-element": "basic-web-components/basic-element#master"
   },
   "devDependencies": {
