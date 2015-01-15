@@ -11,6 +11,7 @@
     "basic-culture-selector": "basic-web-components/basic-culture-selector#master",
     "basic-days-of-week": "basic-web-components/basic-days-of-week#master",
     "basic-element": "basic-web-components/basic-element#master",
+    "basic-fade-overflow": "basic-web-components/basic-fade-overflow#master",
     "basic-filter-by-text": "basic-web-components/basic-filter-by-text#master",
     "basic-framed-content": "basic-web-components/basic-framed-content#master",
     "basic-list-box": "basic-web-components/basic-list-box#master",
