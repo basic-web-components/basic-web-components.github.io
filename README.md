@@ -1,4 +1,1 @@
-This is the public-facing basic-web-components site. Developers wishing to
-contribute to the basic-web-components project should fork the
-[components-dev](https://github.com/basic-web-components/components-dev)
-repository instead.
+This site hosts demos for the Basic Web Components project. If you're looking for information on the project, please check out the main [Basic Web Components repository](https://github.com/basic-web-components/basic-web-components)!
