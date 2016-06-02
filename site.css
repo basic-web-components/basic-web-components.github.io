@@ -6,8 +6,10 @@ input {
 }
 
 body {
+  background: #fdfdfd;
   -webkit-align-items: center;
   align-items: center;
+  color: #333;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -17,11 +19,14 @@ body {
 }
 
 section {
+  border-top: 1px solid #ccc;
+  margin-top: 4em;
   max-width: 1000px;
+  padding-top: 4em;
 }
 
 h1 {
-  margin-top: 2em;
+  margin-top: 0;
 }
 
 label {
@@ -31,9 +36,23 @@ label {
   user-select: none;
 }
 
-.descriptionAndDemo > *:first-child {
+/* Keep description and demo top-aligned. */
+.description > *:first-child,
+.demo > *:first-child {
   margin-top: 0;
 }
+
+.footnote {
+  color: gray;
+  font-size: smaller;
+}
+
+.carousel {
+  background: #111;
+  display: block;
+  height: 300px;
+}
+
 
 /* Desktop */
 @media screen and (min-width: 800px) {
