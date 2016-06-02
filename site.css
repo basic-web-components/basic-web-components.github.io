@@ -18,14 +18,19 @@ body {
   padding: 25px;
 }
 
+body > * {
+  max-width: 1000px;
+  width: 100%;
+}
+
 section {
   border-top: 1px solid #ccc;
   margin-top: 4em;
-  max-width: 1000px;
   padding-top: 4em;
 }
 
-h1 {
+h1,
+h2 {
   margin-top: 0;
 }
 
@@ -47,14 +52,10 @@ label {
   font-size: smaller;
 }
 
-.carousel {
-  background: #111;
-  display: block;
-  height: 300px;
-}
 
-
-/* Desktop */
+/*
+ * Desktop
+ */
 @media screen and (min-width: 800px) {
   .descriptionAndDemo {
     display: -webkit-flex;
@@ -67,4 +68,45 @@ label {
   .description {
     margin-right: 2em;
   }
+}
+
+
+/*
+ * Demo-specific
+ */
+
+basic-page-dots {
+  /* Stupid IE */
+  /*display: block;*/
+}
+
+#animationStage {
+  height: 300px;
+  width: 300px;
+}
+
+.box {
+  -webkit-align-items: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.75);
+  display: -webkit-flex;
+  display: flex;
+  font-weight: bold;
+  font-size: 24px;
+  height: 100vmin;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  width: 100vmin;
+}
+
+.lightText {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.carousel {
+  background: #111;
+  display: block;
+  height: 300px;
 }

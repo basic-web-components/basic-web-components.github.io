@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Basic Web Components</title>
 
+  <script src="node_modules/web-animations-js/web-animations.min.js"></script>
   <script src="node_modules/webcomponents.js/webcomponents.min.js"></script>
   <script src="node_modules/basic-web-components/dist/basic-web-components.js"></script>
   <link rel="stylesheet" href="site.css">
@@ -14,8 +15,54 @@
 
 <body>
 
+  <h1>Basic Web Components</h1>
+
+  <p>
+    The Basic Web Components project seeks to provide a comprehensive set of
+    solid, well-designed web components that implement very common user
+    interface patterns. Each component can be used as is, or as the foundation
+    for new components.
+  </p>
+  <p>
+    See the
+    <a href="https://github.com/basic-web-components/basic-web-components">Basic Web Components</a>
+    repository on GitHub for complete documentation.
+  </p>
+
   <section>
-    <h1>basic-autosize-textarea</h1>
+    <h2>basic-animation-stage</h2>
+    <div class="descriptionAndDemo">
+      <div class="description">
+        <p>
+          Provides animated transitions for selection changes. An animation can
+          be provided specified with keyframes, or by naming a stock effect. The
+          same animation can be shown at an arbitrary point, generally used to
+          reflect a user-controlled touch or trackpad drag operation in
+          progress.
+        </p>
+        <p>
+          This component is a programmatic rendering surface, and comes with no
+          interactivity of its own. This demo adds an instance of
+          basic-page-dots. For a fully interactive carousel that includes touch
+          support, see basic-carousel.
+        </p>
+      </div>
+      <div class="demo">
+        <basic-page-dots>
+          <basic-animation-stage id="animationStage" aria-label="Pages" selection-wraps="true" selection-animation-effect="revealWithFade">
+            <div class="box lightText" style="background: #53777a;"><div>One</div></div>
+            <div class="box" style="background: #d95b43"><div>Two</div></div>
+            <div class="box" style="background: #c02942"><div>Three</div></div>
+            <div class="box" style="background: #ecd078"><div>Four</div></div>
+            <div class="box lightText" style="background: #542437;"><div>Five</div></div>
+          </basic-animation-stage>
+        </basic-page-dots>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>basic-autosize-textarea</h2>
     <div class="descriptionAndDemo">
       <div class="description">
         <p>
@@ -30,7 +77,76 @@
   </section>
 
   <section>
-    <h1>basic-list-box</h1>
+    <h2>basic-carousel</h2>
+    <div class="descriptionAndDemo">
+      <div class="description">
+        <p>
+          An implementation of the carousel user interface pattern, commonly used
+          for navigating laterally between images, pages, and other elements. This
+          pattern presents the user with a linear sequence of elements, through
+          which the user can navigate with a variety of input methods: touch,
+          trackpad, and keyboard.
+        </p>
+        <p>
+          The basic-carousel family of components includes a number of auxiliary
+          components for adding additional means of navigation. See
+          basic-arrow-selection, basic-page-dots, basic-slideshow-timer, and
+          basic-tab-strip.
+        </p>
+      </div>
+      <basic-carousel class="demo carousel" aria-label="Nature scenes" selection-wraps="true">
+        <img src="resources/images/image1.jpg" alt="Lake">
+        <img src="resources/images/image2.jpg" alt="Horses">
+        <img src="resources/images/image6.jpg" alt="Wheat">
+        <img src="resources/images/image3.jpg" alt="Mountain">
+        <img src="resources/images/image7.jpg" alt="Palm tree">
+      </basic-carousel>
+    </div>
+  </section>
+
+  <section>
+    <h2>basic-collapsible-panel</h2>
+    <div class="descriptionAndDemo">
+      <div class="description">
+        <p>
+          A panel which can be expanded/collapsed with simple CSS height
+          animation. It handles only the duties of collapsing and expanding; you
+          must provide a user interface to trigger that change yourself. (This
+          demo includes a button for that purpose.)
+        </p>
+      </div>
+      <div class="demo">
+        <p>
+          <button onclick="document.querySelector('#collapsiblePanel').toggle()">Toggle</button>
+        </p>
+        <basic-collapsible-panel id="collapsiblePanel">
+          This block of text is in a collapsible panel, and will be collapsed/expanded
+          when you click the button above. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Nunc eget sem nulla. Morbi sodales est vitae urna accumsan
+          maximus. Nunc cursus vel justo ut dignissim. Nulla sollicitudin vestibulum
+          rhoncus. Nunc ornare egestas ligula, et facilisis est rhoncus sit amet.
+          Fusce sed enim mi. Duis aliquam diam nec magna cursus, in pharetra ligula
+          maximus. Curabitur a facilisis nisl, in laoreet lorem. Etiam ut dolor
+          dapibus est porttitor hendrerit. Pellentesque a libero a magna maximus
+          laoreet. Ut sed consectetur ipsum. Maecenas felis nibh, hendrerit ac lorem
+          porta, lobortis sagittis massa. Mauris sed cursus diam, quis lacinia sem.
+          Etiam id luctus orci, nec luctus eros. Aliquam risus felis, porta et
+          porttitor quis, blandit nec augue. Sed tristique semper velit, ac aliquet
+          lacus venenatis non. Aliquam at vestibulum lorem. Maecenas non orci a libero
+          imperdiet volutpat malesuada malesuada libero. Phasellus vitae congue leo.
+          Maecenas cursus rhoncus efficitur. Cras porta blandit est ac interdum.
+          Mauris porttitor tortor quis nisl porttitor, sit amet dapibus massa
+          scelerisque. Nullam at ex vehicula, aliquam enim eu, elementum purus.
+        </basic-collapsible-panel>
+        <p>
+          This content is outside the collapsible panel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>basic-list-box</h2>
     <div class="descriptionAndDemo">
       <div class="description">
         <p>
@@ -88,80 +204,11 @@
     </div>
   </section>
 
-  <section>
-    <h1>basic-carousel</h1>
-    <div class="descriptionAndDemo">
-      <div class="description">
-        <p>
-          An implementation of the carousel user interface pattern, commonly used
-          for navigating laterally between images, pages, and other elements. This
-          pattern presents the user with a linear sequence of elements, through
-          which the user can navigate with a variety of input methods: touch,
-          trackpad, and keyboard.
-        </p>
-        <p>
-          The basic-carousel family of components includes a number of auxiliary
-          components for adding additional means of navigation. See
-          basic-arrow-selection, basic-page-dots, basic-slideshow-timer, and
-          basic-tab-strip.
-        </p>
-      </div>
-      <basic-carousel class="demo carousel" aria-label="Nature scenes" selection-wraps="true">
-        <img src="resources/images/image1.jpg" alt="Lake">
-        <img src="resources/images/image2.jpg" alt="Horses">
-        <img src="resources/images/image6.jpg" alt="Wheat">
-        <img src="resources/images/image3.jpg" alt="Mountain">
-        <img src="resources/images/image7.jpg" alt="Palm tree">
-      </basic-carousel>
-    </div>
-  </section>
-
-  <section>
-    <h1>basic-collapsible-panel</h1>
-    <div class="descriptionAndDemo">
-      <div class="description">
-        <p>
-          A panel which can be expanded/collapsed with simple CSS height
-          animation. It handles only the duties of collapsing and expanding; you
-          must provide a user interface to trigger that change yourself. (This
-          demo includes a button for that purpose.)
-        </p>
-      </div>
-      <div class="demo">
-        <p>
-          <button onclick="document.querySelector('#collapsiblePanel').toggle()">Toggle</button>
-        </p>
-        <basic-collapsible-panel id="collapsiblePanel">
-          This block of text is in a collapsible panel, and will be collapsed/expanded
-          when you click the button above. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Nunc eget sem nulla. Morbi sodales est vitae urna accumsan
-          maximus. Nunc cursus vel justo ut dignissim. Nulla sollicitudin vestibulum
-          rhoncus. Nunc ornare egestas ligula, et facilisis est rhoncus sit amet.
-          Fusce sed enim mi. Duis aliquam diam nec magna cursus, in pharetra ligula
-          maximus. Curabitur a facilisis nisl, in laoreet lorem. Etiam ut dolor
-          dapibus est porttitor hendrerit. Pellentesque a libero a magna maximus
-          laoreet. Ut sed consectetur ipsum. Maecenas felis nibh, hendrerit ac lorem
-          porta, lobortis sagittis massa. Mauris sed cursus diam, quis lacinia sem.
-          Etiam id luctus orci, nec luctus eros. Aliquam risus felis, porta et
-          porttitor quis, blandit nec augue. Sed tristique semper velit, ac aliquet
-          lacus venenatis non. Aliquam at vestibulum lorem. Maecenas non orci a libero
-          imperdiet volutpat malesuada malesuada libero. Phasellus vitae congue leo.
-          Maecenas cursus rhoncus efficitur. Cras porta blandit est ac interdum.
-          Mauris porttitor tortor quis nisl porttitor, sit amet dapibus massa
-          scelerisque. Nullam at ex vehicula, aliquam enim eu, elementum purus.
-        </basic-collapsible-panel>
-        <p>
-          This content is outside the collapsible panel.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!--
   Boilerplate for new entries:
 
   <section>
-    <h1>basic-thing</h1>
+    <h2>basic-thing</h2>
     <div class="descriptionAndDemo">
       <div class="description">
         <p>
