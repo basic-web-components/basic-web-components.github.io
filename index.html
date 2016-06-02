@@ -5,11 +5,85 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Basic Web Components</title>
-  <meta http-equiv="refresh" content="0;URL=http://basicwebcomponents.org/basic-web-components/">
+
+  <script src="node_modules/webcomponents.js/webcomponents.min.js"></script>
+  <script src="node_modules/basic-web-components/dist/basic-web-components.js"></script>
+  <link rel="stylesheet" href="site.css">
 
 </head>
 
 <body>
+
+  <section>
+    <h1>basic-autosize-textarea</h1>
+    <div class="descriptionAndDemo">
+      <p class="description">
+        A text area that grows in size to contain its contents, unlike a standard
+        &lt;textarea&gt; element that always remains the same height.
+      </p>
+      <basic-autosize-textarea class="demo" aria-label="Sample auto-sizing textarea" minimum-rows="2" placeholder="Type here">
+        Type all you want here!
+      </basic-autosize-textarea>
+    </div>
+  </section>
+
+  <section>
+    <h1>basic-list-box</h1>
+    <div class="descriptionAndDemo">
+      <p class="description">
+        A single-selection list box with good keyboard support. The
+        Up/Down, Page Up/Down, and Home/End keys work as expected. You can also
+        type the beginning of an item to select it. This list box also has good
+        accessibility support.
+      </p>
+      <basic-list-box class="demo" aria-label="Fruits" style="height: 295px;">
+        <div>Acai</div>
+        <div>Acerola</div>
+        <div>Apple</div>
+        <div>Apricot</div>
+        <div>Banana</div>
+        <div>Blackberry</div>
+        <div>Blueberry</div>
+        <div>Cantaloupe</div>
+        <div>Cherry</div>
+        <div>Cranberry</div>
+        <div>Currant</div>
+        <div>Date</div>
+        <div>Durian</div>
+        <div>Fig</div>
+        <div>Goji berry</div>
+        <div>Gooseberry</div>
+        <div>Grape</div>
+        <div>Grapefruit</div>
+        <div>Honeydew</div>
+        <div>Jackfruit</div>
+        <div>Kiwi</div>
+        <div>Kumquat</div>
+        <div>Lemon</div>
+        <div>Lime</div>
+        <div>Lychee </div>
+        <div>Mango</div>
+        <div>Mangosteen</div>
+        <div>Mulberry</div>
+        <div>Nectarine</div>
+        <div>Orange</div>
+        <div>Papaya</div>
+        <div>Passion Fruit</div>
+        <div>Peach</div>
+        <div>Pear</div>
+        <div>Pineapple</div>
+        <div>Plum</div>
+        <div>Pomegranate</div>
+        <div>Pomelo</div>
+        <div>Prickly Pear</div>
+        <div>Raspberry</div>
+        <div>Strawberry</div>
+        <div>Tangerine</div>
+        <div>Watermelon</div>
+      </basic-list-box>
+    </div>
+  </section>
+
 </body>
 
 </html>
