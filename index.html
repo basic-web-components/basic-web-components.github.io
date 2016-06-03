@@ -40,7 +40,14 @@
         </p>
       </div>
       <div class="demo">
-        <basic-arrow-selection>
+        <basic-arrow-selection class="overlay showArrows">
+          <basic-carousel class="imageContainer" aria-label="Nature scenes">
+            <img src="resources/images/image1.jpg" alt="Lake">
+            <img src="resources/images/image2.jpg" alt="Horses">
+            <img src="resources/images/image6.jpg" alt="Wheat">
+            <img src="resources/images/image3.jpg" alt="Mountain">
+            <img src="resources/images/image7.jpg" alt="Palm tree">
+          </basic-carousel>
         </basic-arrow-selection>
       </div>
     </div>
@@ -111,13 +118,15 @@
           basic-tab-strip.
         </p>
       </div>
-      <basic-carousel class="demo carousel" aria-label="Nature scenes" selection-wraps="true">
-        <img src="resources/images/image1.jpg" alt="Lake">
-        <img src="resources/images/image2.jpg" alt="Horses">
-        <img src="resources/images/image6.jpg" alt="Wheat">
-        <img src="resources/images/image3.jpg" alt="Mountain">
-        <img src="resources/images/image7.jpg" alt="Palm tree">
-      </basic-carousel>
+      <div class="demo">
+        <basic-carousel class="imageContainer" aria-label="Nature scenes" selection-wraps="true">
+          <img src="resources/images/image1.jpg" alt="Lake">
+          <img src="resources/images/image2.jpg" alt="Horses">
+          <img src="resources/images/image6.jpg" alt="Wheat">
+          <img src="resources/images/image3.jpg" alt="Mountain">
+          <img src="resources/images/image7.jpg" alt="Palm tree">
+        </basic-carousel>
+      </div>
     </div>
   </section>
 
@@ -174,8 +183,22 @@
         </p>
       </div>
       <div class="demo">
-        <basic-current-anchor>
-        </basic-current-anchor>
+        <p>
+          The links below navigate to anchors on this page. As you navigate (by
+          clicking, editing the address bar, going back/forward), the links will
+          automatically update their own current state.
+        </p>
+        <ul>
+          <li>
+            <basic-current-anchor href="#one">One</basic-current-anchor>
+          </li>
+          <li>
+            <basic-current-anchor href="#two">Two</basic-current-anchor>
+          </li>
+          <li>
+            <basic-current-anchor href="#three">Three</basic-current-anchor>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -185,11 +208,28 @@
     <div class="descriptionAndDemo">
       <div class="description">
         <p>
-          Fades out content that overflows so the user knows there's more.
+          Fades out content that overflows so the user knows there's more. This
+          component is not itself interactive, so you would typically combine
+          this with some interface for viewing the complete content.
         </p>
       </div>
       <div class="demo">
-        <basic-fade-overflow>
+        <basic-fade-overflow style="height: 6em;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          rhoncus lacus ut blandit euismod. Aenean quam erat, pellentesque ut
+          augue sed, suscipit pretium ligula. Etiam eu euismod quam, at porta
+          ante. Pellentesque vulputate mi ut nibh lacinia, ac tincidunt leo
+          vehicula. Proin porttitor a tortor vitae iaculis. Cras eros magna,
+          mollis a imperdiet facilisis, ornare ac nunc. Ut in vehicula risus,
+          sodales fringilla felis. In libero libero, tincidunt malesuada lorem
+          ut, dictum auctor nunc. Aliquam congue sem sit amet velit semper
+          suscipit. Donec fringilla sodales diam in fringilla. In hac habitasse
+          platea dictumst. Suspendisse at maximus erat. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Cras tincidunt erat auctor varius aliquam. Fusce vitae nunc et justo
+          commodo blandit sed et arcu. Aenean lobortis sollicitudin est, et
+          dignissim massa suscipit non. Donec vitae magna dolor. Nullam vel ante
+          ex. Sed vestibulum sem rutrum vestibulum laoreet.
         </basic-fade-overflow>
       </div>
     </div>
@@ -267,8 +307,15 @@
         </p>
       </div>
       <div class="demo">
-        <basic-modes>
-      </basic-modes>
+        <basic-arrow-selection>
+          <basic-modes aria-label="Panels">
+            <div class="box lightText" style="background: #53777a;"><div>One</div></div>
+            <div class="box" style="background: #d95b43"><div>Two</div></div>
+            <div class="box" style="background: #c02942"><div>Three</div></div>
+            <div class="box" style="background: #ecd078"><div>Four</div></div>
+            <div class="box lightText" style="background: #542437;"><div>Five</div></div>
+          </basic-modes>
+        </basic-arrow-selection>
       </div>
     </div>
   </section>
@@ -286,6 +333,13 @@
       </div>
       <div class="demo">
         <basic-page-dots>
+          <basic-carousel class="imageContainer" aria-label="Nature scenes">
+            <img src="resources/images/image1.jpg" alt="Lake">
+            <img src="resources/images/image2.jpg" alt="Horses">
+            <img src="resources/images/image6.jpg" alt="Wheat">
+            <img src="resources/images/image3.jpg" alt="Mountain">
+            <img src="resources/images/image7.jpg" alt="Palm tree">
+          </basic-carousel>
         </basic-page-dots>
       </div>
     </div>
@@ -302,6 +356,13 @@
       </div>
       <div class="demo">
         <basic-play-controls>
+          <basic-slideshow class="imageContainer" aria-label="Nature scenes">
+            <img src="resources/images/image1.jpg" alt="Lake">
+            <img src="resources/images/image2.jpg" alt="Horses">
+            <img src="resources/images/image6.jpg" alt="Wheat">
+            <img src="resources/images/image3.jpg" alt="Mountain">
+            <img src="resources/images/image7.jpg" alt="Palm tree">
+          </basic-slideshow>
         </basic-play-controls>
       </div>
     </div>
@@ -318,7 +379,12 @@
         </p>
       </div>
       <div class="demo">
-        <basic-slideshow>
+        <basic-slideshow class="imageContainer" aria-label="Nature scenes">
+          <img src="resources/images/image1.jpg" alt="Lake">
+          <img src="resources/images/image2.jpg" alt="Horses">
+          <img src="resources/images/image6.jpg" alt="Wheat">
+          <img src="resources/images/image3.jpg" alt="Mountain">
+          <img src="resources/images/image7.jpg" alt="Palm tree">
         </basic-slideshow>
       </div>
     </div>
@@ -329,14 +395,23 @@
     <div class="descriptionAndDemo">
       <div class="description">
         <p>
-          Adds slideshow semantics to a wrapped element such as a
-          basic-carousel, allowing the selection to advance on a timed basis. If
-          the user directly manipulates the selection, the slideshow timer
-          starts over, giving the user time to view the selected item.
+          Adds slideshow semantics to a wrapped element (here, a basic-carousel
+          with basic-page-dots), allowing the selection to advance on a timed
+          basis. If the user directly manipulates the selection, the slideshow
+          timer starts over, giving the user time to view the selected item.
         </p>
       </div>
       <div class="demo">
         <basic-slideshow-timer>
+          <basic-page-dots>
+            <basic-carousel class="imageContainer" aria-label="Nature scenes" selection-wraps="true">
+              <img src="resources/images/image1.jpg" alt="Lake">
+              <img src="resources/images/image2.jpg" alt="Horses">
+              <img src="resources/images/image6.jpg" alt="Wheat">
+              <img src="resources/images/image3.jpg" alt="Mountain">
+              <img src="resources/images/image7.jpg" alt="Palm tree">
+            </basic-carousel>
+          </basic-page-dots>
         </basic-slideshow-timer>
       </div>
     </div>
@@ -348,14 +423,24 @@
       <div class="description">
         <p>
           Presents list items in a viewport such that only a single item is
-          visible at a time. This component provides no interactivity of its
-          own. In this demo, the component has been wrapped with an instance of
-          basic-arrow-selection.
+          visible at a time, and shows changes in seleciton with a simple
+          sliding effect. This is somewhere between basic-modes (which provides
+          no visual transition) and basic-animation-stage (a more complex
+          rendering surface that requires the Web Animation API). This component
+          provides no interactivity of its own; in this demo, it's been wrapped
+          with an instance of basic-arrow-selection.
         </p>
       </div>
       <div class="demo">
-        <basic-sliding-viewport>
-      </basic-sliding-viewport>
+        <basic-arrow-selection class="showArrows overlay">
+          <basic-sliding-viewport class="imageContainer" aria-label="Nature scenes">
+            <img src="resources/images/image1.jpg" alt="Lake">
+            <img src="resources/images/image2.jpg" alt="Horses">
+            <img src="resources/images/image6.jpg" alt="Wheat">
+            <img src="resources/images/image3.jpg" alt="Mountain">
+            <img src="resources/images/image7.jpg" alt="Palm tree">
+          </basic-sliding-viewport>
+        </basic-arrow-selection>
       </div>
     </div>
   </section>
@@ -365,11 +450,18 @@
     <div class="descriptionAndDemo">
       <div class="description">
         <p>
-          Spreads out a set of items horizontally so they take equal space.
+          Spreads out a set of items horizontally so they take equal space. This
+          is a relatively low-level layout component used by
+          basic-sliding-viewport.
         </p>
       </div>
       <div class="demo">
-        <basic-spread-items>
+        <basic-spread-items class="imageContainer" style="overflow-y: scroll;">
+          <img src="resources/images/image1.jpg" alt="Lake">
+          <img src="resources/images/image2.jpg" alt="Horses">
+          <img src="resources/images/image6.jpg" alt="Wheat">
+          <img src="resources/images/image3.jpg" alt="Mountain">
+          <img src="resources/images/image7.jpg" alt="Palm tree">
         </basic-spread-items>
       </div>
     </div>
@@ -380,12 +472,21 @@
     <div class="descriptionAndDemo">
       <div class="description">
         <p>
-          Wraps a carousel or list-like component with a strip of tabs.
-          Selecting a tab will select the corresponding item in the list.
+          Wraps a list component with a strip of tabs, one for each item in the
+          list. Selecting a tab will select the corresponding item. Typically
+          combined with a component like basic-animation-stage or basic-modes.
+          The latter combination is so common that it is made available as the
+          single component basic-tabs.
         </p>
       </div>
       <div class="demo">
         <basic-tab-strip>
+          <!-- Items don't have contents, to focus attention on the tabs. -->
+          <basic-modes>
+            <div aria-label="One"></div>
+            <div aria-label="Two"></div>
+            <div aria-label="Three"></div>
+          </basic-modes>
         </basic-tab-strip>
       </div>
     </div>
@@ -404,6 +505,9 @@
       </div>
       <div class="demo">
         <basic-tabs>
+          <div class="panel" aria-label="One">Page one</div>
+          <div class="panel" aria-label="Two">Page two</div>
+          <div class="panel" aria-label="Three">Page three</div>
         </basic-tabs>
       </div>
     </div>

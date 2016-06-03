@@ -94,19 +94,41 @@ basic-page-dots {
   display: flex;
   font-weight: bold;
   font-size: 24px;
-  height: 100vmin;
   -webkit-justify-content: center;
   justify-content: center;
-  position: absolute;
-  width: 100vmin;
 }
-
 .lightText {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.carousel {
+.panel {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.imageContainer {
   background: #111;
-  display: block;
+  height: 300px;
+}
+
+basic-current-anchor {
+  color: black;
+  line-height: 1; /* Prevent vertical shift when anchor becomes current. */
+  text-decoration: underline;
+}
+
+basic-current-anchor.current {
+  color: red;
+  font-weight: bold;
+}
+
+basic-modes .box,
+basic-tabs .panel {
   height: 300px;
 }
